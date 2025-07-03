@@ -1,0 +1,34 @@
+decoding message code :
+class Solution {
+    public String decodeMessage(String key, String message) {
+         HashMap <Character,Character> jay=new HashMap<>();
+        for(int i=0;i<key.length();i++){
+            if(key.charAt(i)!=' ' && !jay.containsKey(key.charAt(i))){
+                jay.put(key.charAt(i),((char)(97+i)));
+            
+            } 
+        }
+            String ans="";
+            for(int i=0;i<message.length();i++){
+              char ch=message.charAt(i);
+              if(ch!=' '){
+                char val=jay.get(ch);
+                ans=ans+val;
+              }else{
+                ans+=' ';
+              }
+                
+            }return ans;
+        
+    }
+}
+output :
+Input
+key =
+"eljuxhpwnyrdgtqkviszcfmabo"
+message =
+"zwx hnfx lqantp mnoeius ycgk vcnjrdb"
+Output
+"the five boxing wizards jump quickly"
+Expected
+"the five boxing wizards jump quickly"
