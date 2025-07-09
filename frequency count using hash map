@@ -1,0 +1,21 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        HashMap<Integer,Integer> rohith=new HashMap<>();
+        int arr[]={1,1,2,1,3,5,46,54,6544,57,67,4,5,2,4,2,5,2,};
+        for(int i=0;i<arr.length;i++){
+        if(rohith.containsKey(arr[i])){
+            rohith.put(arr[i],rohith.get(arr[i])+1);
+        }else{
+        rohith.put(arr[i],1);
+        }
+         
+        
+        }int val=5;
+        System.out.println(rohith.get(val));
+        
+       
+    }
+}
