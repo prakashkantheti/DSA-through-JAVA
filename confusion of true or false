@@ -1,0 +1,43 @@
+its also a slidoing window dont confuse mava
+class Solution {
+    public int maxConsecutiveAnswers(String answerKey, int k) {
+        int r=0;
+        int l1=0;
+        int l2=0;
+        int temp1=0;
+        int temp2=0;
+        int ans1=0;
+        int ans2=0;
+        int finalanswer=0;
+        for(r=0;r<answerKey.length();r++){
+            if(answerKey.charAt(r)=='T'){
+                temp1++;
+            }
+            while(temp1>k){
+                if( answerKey.charAt(l1)=='T'){
+                    temp1--;
+                    
+                }
+                l1++;
+            }
+            ans1=Math.max(ans1,r-l1+1);
+            
+        }
+         for(r=0;r<answerKey.length();r++){
+            if(answerKey.charAt(r)=='F'){
+                temp2++;
+            }
+            while(temp2>k){
+                if(answerKey.charAt(l2)=='F'){
+                    temp2--;
+                    
+                }
+                l2++;
+            }
+            ans2=Math.max(ans2,r-l2+1);
+            
+        }finalanswer=Math.max(ans1,ans2);
+         return finalanswer;
+        
+    }
+}
