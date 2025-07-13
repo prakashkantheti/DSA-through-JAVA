@@ -1,0 +1,23 @@
+its binary search code to find a charecter that is lesser then the target 
+very easy 
+
+public class Main
+{
+	public static void main(String[] args) {
+ char[] arr={'a','b','f','g'};
+ int l=0;
+ char target='c';
+ int h=arr.length-1;
+ while(l < h ){
+     int mid=(l+h)/2;
+     if(arr[mid]>target){
+         h=mid-1;
+     }
+     if(arr[mid]<target){
+         l=mid+1;
+         
+     }
+     
+ }System.out.println(arr[h]);
+	}
+}
