@@ -1,0 +1,38 @@
+koko eating bananas very very importent question 
+here we usse binary search 
+we can get how much time a pile take time by deviding  that with k and upper bounding it
+code is here 
+class Solution {
+    public static boolean ispo(int []piles,int mid,int h){
+        
+        for(int i=0;i<piles.length;i++){
+            int a=piles[i]/mid;
+            if(piles[i]%mid != 0){
+                a++;
+            }
+            h-=a;
+        }
+        if(h<0){
+            return false;
+        }
+        else
+        {
+
+        return true;
+        }
+    }
+    public int minEatingSpeed(int[] piles, int h) {
+        int l=1;
+        int r=1000000000;
+        while(l<=r){
+            int mid= l + (r-l)/2;
+            if(ispo(piles,mid,h)){
+                r= mid-1;
+
+            }else{
+                l = mid+1;
+            }
+        }
+        return l;
+    }
+}
