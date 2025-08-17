@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+
+public class MyClass {
+    public static void main(String args[]) {
+      
+      
+      Scanner sc = new Scanner(System.in);
+       int n=sc.nextInt();
+       int arr[];
+       arr=new int[n];
+       for(int i=0;i<n;i++){
+        arr[i]=sc.nextInt();
+       }
+       for(int i=0;i<n;i++){
+        int grade=arr[i];
+        if(grade>=38){
+            int mod=grade%5;
+           int ad= arr[i]+5-mod;
+           if(ad-arr[i]<3){
+            int temp=arr[i];
+            arr[i]=ad;
+            ad=temp;
+           }
+        }
+         
+        }
+        for(int i=0;i<n;i++){
+            System.out.println(arr[i]);
+        }
+       }
+      
+       
+    }
+
