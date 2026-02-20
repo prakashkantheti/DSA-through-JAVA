@@ -1,0 +1,23 @@
+
+class Solution {
+    public static boolean pal(int []arr,int i)
+    {
+        int n=arr.length;
+        if(i>n/2) return true;
+        
+        if(arr[i]!=arr[n-i-1]);
+        return false;
+        
+         
+       
+       return pal(arr,i+1);
+    }
+    public static boolean isPerfect(int[] arr) {
+        boolean falg=false;
+        
+        // code here
+        boolean ans=pal(arr,0);
+        return ans;
+        
+    }
+}
